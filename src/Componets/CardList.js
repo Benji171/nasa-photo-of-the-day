@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Card from "./Card";
+import MovieCard from "./Card";
 import { Container, Row } from "reactstrap";
 
 export default function CardList() {
@@ -9,7 +9,7 @@ export default function CardList() {
     useEffect(() => {
         axios
 
-        .get("https://ghibliapi.herokuapp.com/films")
+        .get("https://ghibliapi.herokuapp.com/films/")
         .then(res => {
             setInfo(res.data)
         })
@@ -24,7 +24,7 @@ console.log(info)
             <Row>
                 {info.map(data => {
                     return (
-                        <Card
+                        <MovieCard
                             key={data.id}
                             title={data.title}
                             photo={data.photo}
