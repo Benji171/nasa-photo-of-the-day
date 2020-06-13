@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import MovieCard from "./Card";
-import { Container, Row } from "reactstrap";
+import { Container, Row,} from "reactstrap";
 
 export default function CardList() {
     const [info, setInfo] = useState([]);
@@ -20,22 +20,22 @@ export default function CardList() {
     
 console.log(info)
     return (
-        <Container>
-            <Row>
-                {info.map(data => {
-                    return (
-                        <MovieCard
-                            key={data.id}
-                            title={data.title}
-                            photo={data.photo}
-                            desc={data.description}
-                            director={data.director}
-                            date={data.release_date}
-                        />
-                    )
-                })}
-            </Row>
-        </Container>
+                <Container>
+                    <Row>
+                        {info.map(data => {
+                            return (
+                                <MovieCard
+                                    key={data.id}
+                                    title={data.title}
+                                    photo={data.photo}
+                                    desc={data.description}
+                                    director={data.director}
+                                    date={data.release_date}
+                                />
+                            )
+                        })}
+                    </Row>
+                </Container>
     )
 }
 
