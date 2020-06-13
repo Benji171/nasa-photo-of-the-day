@@ -1,13 +1,19 @@
 import React from "react";
 import "./App.css";
+import CardList from "./Componets/CardList"
+import logo from "./Assets/Logo.png"
+
+
 
 function App() {
+
   return (
     <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun 🚀!
-      </p>
+      <img className="logo" src={logo} alt="NASA" />
+        <h1 className="header">The Vault</h1>
+            <div className="list-container">
+              <CardList />
+            </div>
     </div>
   );
 }
